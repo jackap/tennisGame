@@ -22,5 +22,18 @@ namespace Tests
             Assert.AreEqual(game.getWinner(), "player1");
 
         }
+
+        [Test]
+        public void TestPlayer12akesAllPoints()
+        {
+            Game game = new Game();
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player2");
+
+            Assert.AreEqual(game.getWinner(), "player2");
+
+        }
     }
 }
