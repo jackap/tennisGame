@@ -50,5 +50,23 @@ namespace Tests
             Assert.AreEqual(game.getWinner(), "still playing");
 
         }
+
+        [Test]
+        public void TestDeuceAfterAdvantage()
+        {
+            Game game = new Game();
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player2");
+
+
+            Assert.AreEqual(game.getWinner(), "still playing");
+
+        }
     }
 }
