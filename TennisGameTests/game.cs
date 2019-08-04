@@ -19,6 +19,16 @@ namespace TennisGame
 
         public string getWinner()
         {
+            if (player1.score > 3 && player2.score > 3)
+            {
+                if (player1.score == player2.score)
+                    return "still playing";
+
+                if (player1.score > player2.score)
+                    return "player1";
+                else
+                    return "player2";
+            }
             if (player1.score > 3)
                 return "player1";
             else if (player2.score > 3)
