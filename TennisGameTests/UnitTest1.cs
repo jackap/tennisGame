@@ -24,12 +24,43 @@ namespace Tests
         }
 
         [Test]
-        public void TestPlayer12akesAllPoints()
+        public void TestPlayer2MakesAllPoints()
         {
             Game game = new Game();
             game.addPoint("player2");
             game.addPoint("player2");
             game.addPoint("player2");
+            game.addPoint("player2");
+
+            Assert.AreEqual(game.getWinner(), "player2");
+
+        }
+
+
+        [Test]
+        public void TestPlayer1Wins()
+        {
+            Game game = new Game();
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player1");
+            game.addPoint("player1");
+
+            Assert.AreEqual(game.getWinner(), "player1");
+
+        }
+
+        [Test]
+        public void TestPlayer2Wins()
+        {
+            Game game = new Game();
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player1");
+            game.addPoint("player1");
             game.addPoint("player2");
 
             Assert.AreEqual(game.getWinner(), "player2");
@@ -82,6 +113,59 @@ namespace Tests
             game.addPoint("player1"); // adv. 1
 
             Assert.AreEqual(game.getWinner(), "still playing");
+
+        }
+
+        [Test]
+        public void TestAdvantageAfterDeucePlayer1()
+        {
+            Game game = new Game();
+            game.addPoint("player2"); // 0 - 15
+            game.addPoint("player2"); // 0 - 30
+            game.addPoint("player2"); // 0 - 40
+            game.addPoint("player1"); // 15 - 40
+            game.addPoint("player1"); // 30 - 40
+            game.addPoint("player1"); // 40 - 40 deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+
+            Assert.AreEqual(game.getWinner(), "still playing");
+
+        }
+
+        [Test]
+        public void TestPlayer1WinsAfterLongRun()
+        {
+            Game game = new Game();
+            game.addPoint("player2"); // 0 - 15
+            game.addPoint("player2"); // 0 - 30
+            game.addPoint("player2"); // 0 - 40
+            game.addPoint("player1"); // 15 - 40
+            game.addPoint("player1"); // 30 - 40
+            game.addPoint("player1"); // 40 - 40 deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player2"); // deuce
+            game.addPoint("player1"); // adv. 1
+            game.addPoint("player1"); // Win 1
+
+            Assert.AreEqual(game.getWinner(), "player1");
 
         }
     }
