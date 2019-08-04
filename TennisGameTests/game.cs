@@ -19,7 +19,12 @@ namespace TennisGame
 
         public string getWinner()
         {
-            return "player1";
+            if (player1.score > 3)
+                return "player1";
+            else if (player2.score > 3)
+                return "player2";
+            else
+                return "still playing";
         }
 
         public void addPoint(string playerName)
