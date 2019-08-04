@@ -95,14 +95,13 @@ namespace Tests
         public void TestAdvantagePlayer2()
         {
             Game game = new Game();
-            game.addPoint("player2");
-            game.addPoint("player2");
-            game.addPoint("player2");
-            game.addPoint("player1");
-            game.addPoint("player1");
-            game.addPoint("player1");
-            game.addPoint("player1");
-            game.addPoint("player2");
+            game.addPoint("player2"); // 0 - 15
+            game.addPoint("player2"); // 0 - 30
+            game.addPoint("player2"); // 0 - 40
+            game.addPoint("player1"); // 15 - 40
+            game.addPoint("player1"); // 30 - 40
+            game.addPoint("player1"); // 40 - 40
+            game.addPoint("player2"); // adv. 2
 
 
             Assert.AreEqual(game.getWinner(), "still playing");

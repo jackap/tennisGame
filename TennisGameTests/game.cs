@@ -26,7 +26,44 @@ namespace TennisGame
 
         }
 
-        private Boolean bothPlayerScoredMoreThanThreePoints() {
+        public void addPoint(string playerName)
+        {
+            if (playerName == "player1")
+            {
+                player1.score++;
+            }
+            else if (playerName == "player2")
+            {
+                player2.score++;
+            }
+        }
+
+        public string getWinner()
+        {
+            if (bothPlayerScoredMoreThanThreePoints())
+            {
+                return checkWinnerAfterDeuce();
+            }
+            else
+                return checkWinnerWhenNoDeuce();
+
+        }
+
+        public string getScore()
+        {
+            if (isDeuce())
+            {
+                return "deuce";
+            }
+            else
+                return Enum.GetName(typeof(Points), player1.score)
+                    + " - "
+                    + Enum.GetName(typeof(Points), player2.score);
+        }
+
+
+        private Boolean bothPlayerScoredMoreThanThreePoints()
+        {
 
             return player1.score >= 3 && player2.score >= 3;
 
@@ -64,38 +101,6 @@ namespace TennisGame
                 return "still playing";
         }
 
-        public string getWinner()
-        {
-            if (bothPlayerScoredMoreThanThreePoints())
-            {
-                return checkWinnerAfterDeuce();
-            }
-            else
-                return checkWinnerWhenNoDeuce();
-           
-        }
-
-        public void addPoint(string playerName)
-        {
-            if (playerName == "player1")
-            {
-                player1.score++;
-            }
-            else if (playerName == "player2")
-            {
-                player2.score++;
-            }
-        }
-
-        public string getScore()
-        {
-            if (isDeuce())
-            {
-                return "deuce";
-            }
-            else
-                return Enum.GetName(typeof(Points), player1.score) + " - " + Enum.GetName(typeof(Points), player2.score);
-        }
 
     }
 }
