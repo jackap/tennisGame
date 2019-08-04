@@ -74,5 +74,21 @@ namespace Tests
 
         }
 
+        [Test]
+        public void TestAdvantagePlayer2()
+        {
+            Game game = new Game();
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player2");
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player2");
+
+
+            Assert.AreEqual(game.getScore(), "advantage player2");
+
+        }
     }
 }
