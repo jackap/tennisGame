@@ -17,18 +17,36 @@ namespace TennisGame
 
         }
 
-        public string getWinner()
-        {
-            if (player1.score > 3 && player2.score > 3)
-            {
-                if (player1.score == player2.score)
-                    return "still playing";
+        private Boolean bothPlayerScoredMoreThanThreePoints() {
 
-                if (player1.score > player2.score)
-                    return "player1";
-                else
-                    return "player2";
-            }
+            return player1.score >= 3 && player2.score >= 3;
+
+        }
+
+        private Boolean isDeuce()
+        {
+            return player1.score == player2.score;
+        }
+
+        private Boolean isAdvantage()
+        {
+            return Math.Abs(player1.score - player2.score) < 2
+                && player1.score != player2.score;
+        }
+
+        private string checkWinnerAfterDeuce()
+        {
+            if (isDeuce() || isAdvantage())
+                return "still playing";
+
+            else if (player1.score > player2.score)
+                return "player1";
+            else
+                return "player2";
+        }
+
+        private string checkWinnerWhenNoDeuce()
+        {
             if (player1.score > 3)
                 return "player1";
             else if (player2.score > 3)
@@ -36,6 +54,17 @@ namespace TennisGame
             else
                 return "still playing";
         }
+        public string getWinner()
+        {
+            if (bothPlayerScoredMoreThanThreePoints())
+            {
+                return checkWinnerAfterDeuce();
+            }
+            else
+                return checkWinnerWhenNoDeuce();
+           
+        }
+
 
         public void addPoint(string playerName)
         {

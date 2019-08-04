@@ -52,7 +52,7 @@ namespace Tests
         }
 
         [Test]
-        public void TestDeuceAfterAdvantage()
+        public void TestAdvantagePlayer2()
         {
             Game game = new Game();
             game.addPoint("player2");
@@ -64,6 +64,22 @@ namespace Tests
             game.addPoint("player1");
             game.addPoint("player2");
 
+
+            Assert.AreEqual(game.getWinner(), "still playing");
+
+        }
+
+        [Test]
+        public void TestAdvantagePlayer1()
+        {
+            Game game = new Game();
+            game.addPoint("player2"); // 0 - 15
+            game.addPoint("player2"); // 0 - 30
+            game.addPoint("player2"); // 0 - 40
+            game.addPoint("player1"); // 15 - 40
+            game.addPoint("player1"); // 30 - 40
+            game.addPoint("player1"); // 40 - 40
+            game.addPoint("player1"); // adv. 1
 
             Assert.AreEqual(game.getWinner(), "still playing");
 
