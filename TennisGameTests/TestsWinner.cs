@@ -11,6 +11,15 @@ namespace Tests
         }
 
         [Test]
+        public void GameStarted()
+        {
+            Game game = new Game();
+           
+            Assert.AreEqual(game.getWinner(), "still playing");
+
+        }
+
+        [Test]
         public void TestPlayer1MakesAllPoints()
         {
             Game game = new Game();

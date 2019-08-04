@@ -34,7 +34,7 @@ namespace TennisGame
 
         private Boolean isDeuce()
         {
-            return player1.score == player2.score;
+            return player1.score == player2.score && player1.score != 0;
         }
 
         private Boolean isAdvantage()
@@ -89,7 +89,12 @@ namespace TennisGame
 
         public string getScore()
         {
-            return Enum.GetName(typeof(Points), player1.score) + " - " + Enum.GetName(typeof(Points), player2.score);
+            if (isDeuce())
+            {
+                return "deuce";
+            }
+            else
+                return Enum.GetName(typeof(Points), player1.score) + " - " + Enum.GetName(typeof(Points), player2.score);
         }
 
     }
