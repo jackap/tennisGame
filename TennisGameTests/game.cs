@@ -51,10 +51,11 @@ namespace TennisGame
 
         public string getScore()
         {
-            if (isDeuce())
+            if (bothPlayerScoredMoreThanThreePoints())
             {
-                return "deuce";
+                return checkScoreAfterDeuce();
             }
+
             else
                 return Enum.GetName(typeof(Points), player1.score)
                     + " - "
@@ -99,6 +100,21 @@ namespace TennisGame
                 return "player2";
             else
                 return "still playing";
+        }
+
+        private string checkScoreAfterDeuce()
+        {
+            if (isDeuce())
+            {
+                return "deuce";
+            }
+            else
+            {
+                String playerInAdvantage =
+                    (player1.score > player2.score) ? "player1" : "player2";
+                return "advantage " + playerInAdvantage;
+
+            }
         }
 
 
