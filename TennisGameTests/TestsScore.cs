@@ -107,5 +107,20 @@ namespace Tests
             Assert.AreEqual(game.getScore(), "advantage player1");
 
         }
+
+        [Test]
+        public void TestWinPlayer1()
+        {
+            Game game = new Game();
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player1");
+            game.addPoint("player1");
+
+
+            Assert.AreEqual(game.getScore(), "player1 wins");
+
+        }
     }
 }

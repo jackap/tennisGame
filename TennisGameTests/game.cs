@@ -49,38 +49,6 @@ namespace TennisGame
 
         }
 
-        public string getScore()
-        {
-            if (bothPlayerScoredMoreThanThreePoints())
-            {
-                return checkScoreAfterDeuce();
-            }
-
-            else
-                return Enum.GetName(typeof(Points), player1.score)
-                    + " - "
-                    + Enum.GetName(typeof(Points), player2.score);
-        }
-
-
-        private Boolean bothPlayerScoredMoreThanThreePoints()
-        {
-
-            return player1.score >= 3 && player2.score >= 3;
-
-        }
-
-        private Boolean isDeuce()
-        {
-            return player1.score == player2.score && player1.score != 0;
-        }
-
-        private Boolean isAdvantage()
-        {
-            return Math.Abs(player1.score - player2.score) < 2
-                && player1.score != player2.score;
-        }
-
         private string checkWinnerAfterDeuce()
         {
             if (isDeuce() || isAdvantage())
@@ -102,6 +70,20 @@ namespace TennisGame
                 return "still playing";
         }
 
+        public string getScore()
+        {
+            if (bothPlayerScoredMoreThanThreePoints())
+            {
+                return checkScoreAfterDeuce();
+            }
+
+            else
+                return Enum.GetName(typeof(Points), player1.score)
+                    + " - "
+                    + Enum.GetName(typeof(Points), player2.score);
+        }
+
+
         private string checkScoreAfterDeuce()
         {
             if (isDeuce())
@@ -115,6 +97,24 @@ namespace TennisGame
                 return "advantage " + playerInAdvantage;
 
             }
+        }
+
+        private Boolean bothPlayerScoredMoreThanThreePoints()
+        {
+
+            return player1.score >= 3 && player2.score >= 3;
+
+        }
+
+        private Boolean isDeuce()
+        {
+            return player1.score == player2.score && player1.score != 0;
+        }
+
+        private Boolean isAdvantage()
+        {
+            return Math.Abs(player1.score - player2.score) < 2
+                && player1.score != player2.score;
         }
 
 
