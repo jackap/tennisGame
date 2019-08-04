@@ -1,0 +1,15 @@
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/NUnit3.TestAdapter.dll
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/NUnit3.TestAdapter.pdb
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/nunit.engine.netstandard.dll
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/Mono.Cecil.dll
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/TennisGameTests.deps.json
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/TennisGameTests.runtimeconfig.json
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/TennisGameTests.runtimeconfig.dev.json
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/TennisGameTests.dll
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/bin/Debug/netcoreapp2.1/TennisGameTests.pdb
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/obj/Debug/netcoreapp2.1/TennisGameTests.csprojAssemblyReference.cache
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/obj/Debug/netcoreapp2.1/TennisGameTests.csproj.CoreCompileInputs.cache
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/obj/Debug/netcoreapp2.1/TennisGameTests.AssemblyInfoInputs.cache
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/obj/Debug/netcoreapp2.1/TennisGameTests.AssemblyInfo.cs
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/obj/Debug/netcoreapp2.1/TennisGameTests.dll
+/Users/jacopobufalino/Projects/TennisGame/TennisGameTests/obj/Debug/netcoreapp2.1/TennisGameTests.pdb
