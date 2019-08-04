@@ -3,7 +3,7 @@ using TennisGame;
 
 namespace Tests
 {
-    public class Tests
+    public class TestsWinner
     {
         [SetUp]
         public void Setup()

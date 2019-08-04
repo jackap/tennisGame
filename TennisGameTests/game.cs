@@ -1,6 +1,15 @@
 ﻿using System;
 namespace TennisGame
 {
+
+    enum Points
+    {
+        love,
+        fifteen,
+        thirty,
+        forty
+    }
+
     public class Game
     {
         private Player player1;
@@ -54,6 +63,7 @@ namespace TennisGame
             else
                 return "still playing";
         }
+
         public string getWinner()
         {
             if (bothPlayerScoredMoreThanThreePoints())
@@ -64,7 +74,6 @@ namespace TennisGame
                 return checkWinnerWhenNoDeuce();
            
         }
-
 
         public void addPoint(string playerName)
         {
@@ -77,5 +86,11 @@ namespace TennisGame
                 player2.score++;
             }
         }
+
+        public string getScore()
+        {
+            return Enum.GetName(typeof(Points), player1.score) + " - " + Enum.GetName(typeof(Points), player2.score);
+        }
+
     }
 }
