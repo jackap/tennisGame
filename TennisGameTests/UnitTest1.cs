@@ -11,7 +11,7 @@ namespace Tests
         }
 
         [Test]
-        public void Test1()
+        public void TestPlayer1MakesAllPoints()
         {
             Game game = new Game();
             game.addPoint("player1");
